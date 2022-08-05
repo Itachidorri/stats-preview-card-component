@@ -1,0 +1,152 @@
+/*Wrote custom properties, these allow me to keep all controls to my
+  website at the start inside root element */
+:root{
+  --bg-primary: black;
+  --bg-secondary: rgb(33, 34, 64);
+
+  --primary-txt-clr: white;
+  --secondary-txt-clr: lightgrey;
+
+  --accent-clr: hsla(280, 50%, 60%, 1);
+
+  --fw-n: 300;
+  --fw-med: 500;
+  --fw-b: 700;
+
+  --fs-n: 0.5rem;
+  --fs-med: calc(var(--fs-n)*1.5);
+  --fs-large: calc(var(--fs-n)*4);
+
+  --ff-primary: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+
+  --spacer: 0.5rem;
+  --spacer-med: calc(var(--spacer)*2);
+  --spacer-large-flexible: calc(var(--spacer)*7);
+
+  --gap: 1.5rem;
+  --gap-fexible: min(1vw,1.5rem);
+  --gap-large: 4rem;
+}
+
+/*Resets margin & padding of all elements*/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/*created utility classes, these can be used repeatedly*/
+.flex{
+  display: flex;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+body{
+  background-color: var(--bg-primary);
+  color: var(--primary-txt-clr);
+  font-family: var(--ff-primary);
+}
+
+.stat-preview{
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container{
+  background-color: var(--bg-secondary);
+  max-width: 60rem;
+  max-height: 24rem;
+  gap: var(--gap-flexible);
+  border-radius: 10px;
+  overflow-x: hidden;
+  margin: min(5vw,5rem);
+}
+
+.content{
+  padding: var(--spacer-large-flexible);
+  max-width: 21rem;
+  min-width: 16rem;
+  flex-direction: column;
+  gap: var(--gap);
+  flex-shrink: 3;
+}
+
+h1{
+  font-size: var(--fs-large);
+}
+
+.content .highlight{
+  color: var(--accent-clr);
+}
+
+p{
+  line-height: 1.4;
+  color: var(--secondary-txt-clr);
+}
+
+.content .stats{
+  justify-content: space-between;
+  gap: var(--gap);
+  flex-grow: 1;
+  align-items: flex-end;
+}
+
+.stat-caption{
+  font-size: var(--fs-med);
+}
+
+.img-container{
+  max-width: 30rem;
+  min-width: 15rem;
+  min-height: 10rem;
+  background-color: hsla(280, 96%, 40%);
+  overflow-x: hidden;
+}
+
+.content-img{
+  flex-basis: 100%;
+  vertical-align: center;
+  opacity: 0.6;
+}
+
+@media (max-width: 51rem) {
+  :root{
+    --spacer-large-flexible: min(2rem, calc(var(--spacer)*7));
+  }
+
+  .flex-container{
+    flex-direction: column-reverse;
+    max-height: none;
+  }
+
+  .content{
+    align-iems: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1,h2,p{
+    text-align: center;
+  }
+
+  .content-img{
+    flex-shrink: 0;
+    max-height: 15rem;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media (max-width:35rem) {
+  :root{
+    --fs-large: calc(var(--fs-n)*3.5);
+  }
+
+  .content .stats{
+    flex-direction: column;
+    align-items: center;
+  }
+}
