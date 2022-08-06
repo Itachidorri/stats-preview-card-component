@@ -108,7 +108,9 @@ p{
 
 .content-img{
   flex-basis: 100%;
-  vertical-align: center;
+  max-width: 100%;
+  flex-basis: ;
+  vertical-align: bottom;
   mix-blend-mode: multiply;
   opacity: 0.8;
 }
