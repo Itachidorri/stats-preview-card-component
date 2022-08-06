@@ -102,14 +102,15 @@ p{
   max-width: 30rem;
   min-width: 15rem;
   min-height: 10rem;
-  background-color: hsla(280, 96%, 40%);
+  background-color: var(--accent-clr);
   overflow-x: hidden;
 }
 
 .content-img{
   flex-basis: 100%;
   vertical-align: center;
-  opacity: 0.6;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
 }
 
 @media (max-width: 51rem) {
